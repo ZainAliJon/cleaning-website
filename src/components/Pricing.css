@@ -1,0 +1,143 @@
+.pricing-tabs {
+  display: inline-flex;
+  margin: 0 auto var(--space-12);
+  background: var(--color-neutral-100);
+  padding: 4px;
+  border-radius: var(--radius-full);
+  gap: 4px;
+  width: 100%;
+  max-width: 480px;
+}
+.pricing-tab {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-full);
+  font-weight: var(--fw-semi);
+  font-size: var(--fs-sm);
+  color: var(--color-text-mute);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  transition: background var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out);
+  white-space: nowrap;
+}
+.pricing-tab.active {
+  background: var(--color-bg);
+  color: var(--color-neutral-900);
+  box-shadow: var(--shadow-sm);
+}
+.pricing-tab-save {
+  background: var(--color-brand-100);
+  color: var(--color-brand-700);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+}
+
+.pricing-tabs { display: flex; }
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: stretch;
+}
+
+.pricing-card {
+  position: relative;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
+}
+.pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.pricing-card.featured {
+  background: linear-gradient(180deg, var(--color-neutral-900), #0b1220);
+  color: var(--color-neutral-50);
+  border: 0;
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-8px);
+}
+.pricing-card.featured:hover { transform: translateY(-12px); }
+
+.pricing-badge {
+  position: absolute;
+  top: -14px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-brand-500);
+  color: #fff;
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.pricing-name {
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--space-1);
+}
+.pricing-desc {
+  color: var(--color-text-mute);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-6);
+}
+.pricing-card.featured .pricing-desc { color: rgba(255,255,255,0.7); }
+
+.pricing-amount {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  margin-bottom: var(--space-6);
+  font-family: var(--font-display);
+}
+.pricing-currency { font-size: var(--fs-2xl); font-weight: var(--fw-semi); }
+.pricing-num { font-size: var(--fs-6xl); font-weight: var(--fw-extra); letter-spacing: -0.04em; line-height: 1; }
+.pricing-per { color: var(--color-text-mute); font-size: var(--fs-base); font-family: var(--font-body); }
+.pricing-card.featured .pricing-per { color: rgba(255,255,255,0.7); }
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-6) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--fs-sm);
+}
+.pricing-tick {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--color-brand-100);
+  color: var(--color-brand-700);
+  flex-shrink: 0;
+}
+.pricing-card.featured .pricing-tick { background: rgba(16,185,129,0.2); color: var(--color-brand-300); }
+
+.pricing-card.featured .btn-primary { background: var(--color-brand-400); color: var(--color-neutral-900); }
+.pricing-card.featured .btn-primary:hover { background: var(--color-brand-300); }
+
+.pricing-note {
+  margin-top: var(--space-12);
+  text-align: center;
+  color: var(--color-text-soft);
+  font-size: var(--fs-sm);
+}
+
+@media (min-width: 768px) { .pricing-grid { grid-template-columns: repeat(3, 1fr); } }
